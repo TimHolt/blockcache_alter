@@ -364,7 +364,7 @@ function blockcache_alter_node_delete($node) {
  * Implementation of hook_comment_insert().
  */
 function blockcache_alter_comment_insert($comment) {
-  $thiscnode = node_load($comment['nid']);
+  $thiscnode = node_load($comment->nid);
   $nodetype = $thiscnode->type;
   _blockcache_alter_cleanup('comment', $nodetype);
   return;
@@ -374,7 +374,7 @@ function blockcache_alter_comment_insert($comment) {
  * Implementation of hook_comment_update().
  */
 function blockcache_alter_comment_update($comment) {
-  $thiscnode = node_load($comment['nid']);
+  $thiscnode = node_load($comment->nid);
   $nodetype = $thiscnode->type;
   _blockcache_alter_cleanup('comment', $nodetype);
   return;
@@ -384,7 +384,7 @@ function blockcache_alter_comment_update($comment) {
  * Implementation of hook_comment_delete().
  */
 function blockcache_alter_comment_delete($comment) {
-  $thiscnode = node_load($comment['nid']);
+  $thiscnode = node_load($comment->nid);
   $nodetype = $thiscnode->type;
   _blockcache_alter_cleanup('comment', $nodetype);
   return;
